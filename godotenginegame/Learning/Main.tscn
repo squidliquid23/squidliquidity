@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5qryo8n0uk5b"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_txrwh"]
+[ext_resource type="PackedScene" uid="uid://c7jnolfffk1de" path="res://bg.tscn" id="2_htunv"]
+
+[sub_resource type="GDScript" id="GDScript_tqxt2"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	pass # Replace with function body.
+"
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_txrwh")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 449.0
+offset_top = 128.0
+offset_right = 735.0
+offset_bottom = 278.0
+mouse_default_cursor_shape = 2
+text = "Play"
+script = SubResource("GDScript_tqxt2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 332.0
+offset_right = 733.2
+offset_bottom = 483.01
+tooltip_text = "This exits the game!"
+text = "Quit
+"
+script = SubResource("GDScript_tqxt2")
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" parent="." instance=ExtResource("2_htunv")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

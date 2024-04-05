@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7jnolfffk1de"]
+
+[ext_resource type="Script" path="res://BG.gd" id="1_ifwlp"]
+[ext_resource type="Texture2D" uid="uid://iitr5kqloggv" path="res://player_frames/rainbowbackground.png" id="2_t03q3"]
+[ext_resource type="Texture2D" uid="uid://xfr22kfcwojt" path="res://player_frames/stormclouds.png" id="3_bagia"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0x8o"]
+load_path = "res://.godot/imported/stormclouds.png-e6e670cd88353e8b3a4ff7a821a1d8b7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fa8y"]
+load_path = "res://.godot/imported/stormclouds.png-e6e670cd88353e8b3a4ff7a821a1d8b7.ctex"
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_ifwlp")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+self_modulate = Color(0.211765, 0.0980392, 1, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Rainbowbackground" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(960, 544)
+texture = ExtResource("2_t03q3")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(100, 0)
+skew = 0.193732
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Stormclouds" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(297.785, -22.7954)
+scale = Vector2(0.439583, 0.501852)
+texture = ExtResource("3_bagia")
+
+[node name="Stormclouds2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1017.79, -30.7954)
+scale = Vector2(0.439583, 0.501852)
+texture = SubResource("CompressedTexture2D_v0x8o")
+
+[node name="Stormclouds3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1737.78, -38.7954)
+scale = Vector2(0.439583, 0.501852)
+texture = SubResource("CompressedTexture2D_7fa8y")
